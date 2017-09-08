@@ -1,0 +1,6 @@
+framework module Pods_NailedIt_Tests {
+  umbrella header "Pods-NailedIt!Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_NailedIt_ {
+  umbrella header "Pods-NailedIt!-umbrella.h"
+
+  export *
+  module * { export * }
+}
