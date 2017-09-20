@@ -8,6 +8,9 @@
 
 import UIKit
 
+private let PASSWORD_MIN_LENGTH = 5
+private let USERNAME_MIN_LENGTH = 5
+
 class LoginViewController: UIViewController {
 
     
@@ -69,7 +72,7 @@ class LoginViewController: UIViewController {
     /// Function to change status of login button based on textfield edits.
     /// - Note: Receives updates from target-action mechanism.
     func loginInfoUpdated() {
-        if username != "" && password != "" {
+        if username.characters.count > USERNAME_MIN_LENGTH && password.characters.count > PASSWORD_MIN_LENGTH {
             loginButton.isEnabled = true
             loginButton.layer.opacity = 1.0
         } else {
