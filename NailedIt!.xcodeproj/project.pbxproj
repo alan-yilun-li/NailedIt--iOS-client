@@ -10,6 +10,7 @@
 		7D180B4065108659E655D59B /* Pods_NailedIt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483F364F09F24DDDE6CCE25D /* Pods_NailedIt_Tests.framework */; };
 		E70EF6921F62BFA10041F380 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E70EF6911F62BFA10041F380 /* .gitignore */; };
 		E70EF6951F62C0070041F380 /* TestSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EF6941F62C0070041F380 /* TestSecret.swift */; };
+		E75570151F71EE0B003B98EB /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75570141F71EE0B003B98EB /* UserSettings.swift */; };
 		E7DE08981F62A96A004BAC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE08971F62A96A004BAC91 /* AppDelegate.swift */; };
 		E7DE089F1F62A96A004BAC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DE089E1F62A96A004BAC91 /* Assets.xcassets */; };
 		E7DE08AD1F62A96A004BAC91 /* NailedIt_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE08AC1F62A96A004BAC91 /* NailedIt_Tests.swift */; };
@@ -38,6 +39,7 @@
 		D67C06108968CFF188A2C1D1 /* Pods-NailedIt!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NailedIt!Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NailedIt!Tests/Pods-NailedIt!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E70EF6911F62BFA10041F380 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		E70EF6941F62C0070041F380 /* TestSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSecret.swift; sourceTree = "<group>"; };
+		E75570141F71EE0B003B98EB /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		E7DE08941F62A96A004BAC91 /* NailedIt!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NailedIt!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE08971F62A96A004BAC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7DE089E1F62A96A004BAC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		E7DE08B71F62AA52004BAC91 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E75570141F71EE0B003B98EB /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70EF6951F62C0070041F380 /* TestSecret.swift in Sources */,
+				E75570151F71EE0B003B98EB /* UserSettings.swift in Sources */,
 				E7DE08C71F62ACB0004BAC91 /* LoginViewController.swift in Sources */,
 				E7DE08981F62A96A004BAC91 /* AppDelegate.swift in Sources */,
 			);

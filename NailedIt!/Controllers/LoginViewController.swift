@@ -97,22 +97,5 @@ class LoginViewController: UIViewController {
         
         // Do login code here.
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
 
