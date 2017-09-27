@@ -16,6 +16,8 @@ extension UIColor {
     static let textGrey = #colorLiteral(red: 0.403232336, green: 0.4244962037, blue: 0.4481934905, alpha: 1)
     
     static let nailedPurple = #colorLiteral(red: 0.3561568172, green: 0.2714046869, blue: 1, alpha: 1)
+    
+    static let weakNailedPurple = #colorLiteral(red: 0.3561568172, green: 0.2714046869, blue: 1, alpha: 0.6987104024)
 
     
 }

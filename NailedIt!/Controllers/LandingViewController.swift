@@ -16,25 +16,22 @@ class LandingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let rememberMe: Bool = UserSettings.current.rememberMe ?? false
+        // This is just to help dev. Change this when we're actually adding skipping the login page functionality.
+        UserSettings.current.rememberMe = false
         
-        if rememberMe {
+        if UserSettings.current.rememberMe ?? false {
             // Skip log-in page
-            print("should skip login page")
         } else {
-            fatalError()
+            
             guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") else {
                 fatalError()
             }
             present(loginViewController, animated: true, completion: nil)
         }
-        
-        print(rememberMe)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {

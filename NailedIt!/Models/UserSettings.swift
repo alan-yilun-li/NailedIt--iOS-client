@@ -26,7 +26,7 @@ class UserSettings {
     var rememberMe: Bool? {
         
         didSet {
-            UserDefaults.standard.setValue(username, forKey: REMEMBER_ME_KEY)
+            UserDefaults.standard.set(rememberMe!, forKey: REMEMBER_ME_KEY)
         }
     }
     

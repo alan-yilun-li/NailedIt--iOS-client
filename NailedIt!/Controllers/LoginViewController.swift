@@ -16,13 +16,14 @@ class LoginViewController: UIViewController {
     
     // MARK: - Outlets and Storyboard Properties
     
+    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var rememberMeSwitch: UISwitch!
     
     // MARK: - Constants
-    let GREYED_OUT_OPACITY: Float = 0.5
+    let GREYED_OUT_OPACITY: Float = 0.7
     
     // MARK: - Computed Storyboard Properties
     
@@ -41,6 +42,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Populating the version label
+        versionLabel.text = "v.\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)"
         
         // View Setup
         passwordTextField.isSecureTextEntry = true
@@ -101,8 +105,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func remembeMeSwitchChanged(_ sender: Any) {
         UserSettings.current.rememberMe = rememberMeSwitch.isOn
-        
-        print("Did change remember me: \(rememberMeSwitch.isOn)")
     }
 }
 

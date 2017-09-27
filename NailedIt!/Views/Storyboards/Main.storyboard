@@ -18,7 +18,6 @@
         </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
-            <string>HelveticaNeue-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -65,18 +64,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vtH-TF-x3T" userLabel="Login">
-                                <rect key="frame" x="26" y="142" width="323" height="161"/>
+                                <rect key="frame" x="26" y="127" width="323" height="171"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Jqi-Dj-Kic" userLabel="Username">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jei-9a-Its">
-                                                <rect key="frame" x="0.0" y="0.0" width="43" height="12"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eT-YZ-2FH">
-                                                <rect key="frame" x="0.0" y="14" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="19" width="323" height="30"/>
                                                 <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -88,16 +88,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ojO-7y-sMa" userLabel="Password">
-                                        <rect key="frame" x="0.0" y="64" width="323" height="44"/>
+                                        <rect key="frame" x="0.0" y="69" width="323" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruq-8h-Vbp">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="12"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85d-3e-Khl">
-                                                <rect key="frame" x="0.0" y="14" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="19" width="323" height="30"/>
                                                 <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -109,11 +109,11 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-rr-vF2">
-                                        <rect key="frame" x="0.0" y="128" width="323" height="33"/>
-                                        <color key="backgroundColor" red="1" green="0.39553492940000001" blue="0.2656353789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="138" width="323" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
                                         <state key="normal" title="LOGIN">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="0.39553492940000001" blue="0.2656353789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNd-UD-WUq"/>
@@ -124,37 +124,46 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAILED IT!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8a-qO-Gv3">
                                 <rect key="frame" x="108" y="55" width="158" height="37"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-63-SMB" userLabel="Remember Stack">
-                                <rect key="frame" x="46" y="313" width="283" height="31"/>
+                                <rect key="frame" x="46" y="308" width="283" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Me?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qB-JF-Pvn">
                                         <rect key="frame" x="0.0" y="0.0" width="234" height="31"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="19y-vx-AbA">
                                         <rect key="frame" x="234" y="0.0" width="51" height="31"/>
-                                        <color key="tintColor" red="0.35615681719999998" green="0.27140468690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="onTintColor" red="1" green="0.39553492940000001" blue="0.2656353789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.35615681719999998" green="0.27140468690000003" blue="1" alpha="0.69871040239726023" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" red="0.35615681719999998" green="0.27140468690000003" blue="1" alpha="0.69871040240000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="remembeMeSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zTS-5e-ddk"/>
                                         </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWU-Vj-Zj1">
+                                <rect key="frame" x="292.5" y="648" width="78.5" height="15"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.39553492940000001" blue="0.2656353789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.35615681719999998" green="0.27140468690000003" blue="1" alpha="0.69871040239726023" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vtH-TF-x3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="07U-IS-z0Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vtH-TF-x3T" secondAttribute="trailing" constant="10" id="3wN-9F-EME"/>
                             <constraint firstItem="OP7-63-SMB" firstAttribute="top" secondItem="vtH-TF-x3T" secondAttribute="bottom" constant="10" id="I4s-0Q-40G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OP7-63-SMB" secondAttribute="trailing" constant="30" id="Lzj-DB-rmx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWU-Vj-Zj1" secondAttribute="bottom" constant="4" id="OG2-It-0Sa"/>
+                            <constraint firstItem="AWU-Vj-Zj1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-4" id="WTg-go-Frv"/>
                             <constraint firstItem="OP7-63-SMB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="d7O-s4-lnJ"/>
-                            <constraint firstItem="vtH-TF-x3T" firstAttribute="top" secondItem="X8a-qO-Gv3" secondAttribute="bottom" constant="50" id="nn6-HR-RnU"/>
+                            <constraint firstItem="vtH-TF-x3T" firstAttribute="top" secondItem="X8a-qO-Gv3" secondAttribute="bottom" constant="35" id="nn6-HR-RnU"/>
                             <constraint firstItem="X8a-qO-Gv3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="oYZ-2Y-Jsq"/>
                             <constraint firstItem="X8a-qO-Gv3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sE4-8a-tzU"/>
                         </constraints>
@@ -164,6 +173,7 @@
                         <outlet property="passwordTextField" destination="85d-3e-Khl" id="TSh-t6-Uqo"/>
                         <outlet property="rememberMeSwitch" destination="19y-vx-AbA" id="TMj-A5-O8Q"/>
                         <outlet property="usernameTextField" destination="0eT-YZ-2FH" id="fcK-pa-00d"/>
+                        <outlet property="versionLabel" destination="AWU-Vj-Zj1" id="4CV-Ts-TkR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
