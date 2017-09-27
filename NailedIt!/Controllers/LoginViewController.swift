@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var rememberMeSwitch: UISwitch!
     
     // MARK: - Constants
     let GREYED_OUT_OPACITY: Float = 0.5
@@ -71,7 +72,7 @@ class LoginViewController: UIViewController {
     
     /// Function to change status of login button based on textfield edits.
     /// - Note: Receives updates from target-action mechanism.
-    func loginInfoUpdated() {
+    @objc func loginInfoUpdated() {
         if username.characters.count > USERNAME_MIN_LENGTH && password.characters.count > PASSWORD_MIN_LENGTH {
             loginButton.isEnabled = true
             loginButton.layer.opacity = 1.0
@@ -85,7 +86,7 @@ class LoginViewController: UIViewController {
     /// - Important: Dismisses keyboard as a side effect.
     // Add to this function as editable elements increase. 
     // If too many, can use subviews for loops and "is" operator to filter.
-    func endEditing() {
+    @objc func endEditing() {
         usernameTextField.endEditing(true)
         passwordTextField.endEditing(true)
     }
@@ -97,5 +98,28 @@ class LoginViewController: UIViewController {
         
         // Do login code here.
     }
+    
+    @IBAction func remembeMeSwitchChanged(_ sender: Any) {
+        UserSettings.current.rememberMe = rememberMeSwitch.isOn
+        
+        print("Did change remember me: \(rememberMeSwitch.isOn)")
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

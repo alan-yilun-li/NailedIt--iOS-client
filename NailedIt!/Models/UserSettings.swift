@@ -12,6 +12,7 @@ import Foundation
 private let PASSWORD_KEY = "PASSWORD"
 private let USERNAME_KEY = "USERNAME"
 private let TOKEN_KEY = "TOKEN"
+private let REMEMBER_ME_KEY = "REMEMBE_ME"
 
 /// Structure associated with user's default settings.
 class UserSettings {
@@ -21,6 +22,13 @@ class UserSettings {
     static let current = UserSettings()
     
     private init() {}
+    
+    var rememberMe: Bool? {
+        
+        didSet {
+            UserDefaults.standard.setValue(username, forKey: REMEMBER_ME_KEY)
+        }
+    }
     
     var username: String? {
         
@@ -53,6 +61,7 @@ class UserSettings {
         username = UserDefaults.standard.string(forKey: USERNAME_KEY)
         password = UserDefaults.standard.string(forKey: PASSWORD_KEY)
         token = UserDefaults.standard.string(forKey: TOKEN_KEY)
+        rememberMe = UserDefaults.standard.bool(forKey: REMEMBER_ME_KEY)
         
     }
 }
