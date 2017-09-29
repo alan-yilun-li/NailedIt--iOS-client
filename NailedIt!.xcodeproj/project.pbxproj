@@ -10,6 +10,7 @@
 		7D180B4065108659E655D59B /* Pods_NailedIt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483F364F09F24DDDE6CCE25D /* Pods_NailedIt_Tests.framework */; };
 		E70EF6921F62BFA10041F380 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E70EF6911F62BFA10041F380 /* .gitignore */; };
 		E70EF6951F62C0070041F380 /* TestSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EF6941F62C0070041F380 /* TestSecret.swift */; };
+		E7331FE61F7DE2B10055377D /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7331FE51F7DE2B10055377D /* AccountManager.swift */; };
 		E7428C8A1F7B22D8009F1949 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7428C891F7B22D8009F1949 /* Colours.swift */; };
 		E7428C8C1F7B22E6009F1949 /* ViewCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7428C8B1F7B22E6009F1949 /* ViewCustomizer.swift */; };
 		E7428C8E1F7B2842009F1949 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7428C8D1F7B2842009F1949 /* LandingViewController.swift */; };
@@ -42,6 +43,7 @@
 		D67C06108968CFF188A2C1D1 /* Pods-NailedIt!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NailedIt!Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NailedIt!Tests/Pods-NailedIt!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E70EF6911F62BFA10041F380 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		E70EF6941F62C0070041F380 /* TestSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSecret.swift; sourceTree = "<group>"; };
+		E7331FE51F7DE2B10055377D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		E7428C891F7B22D8009F1949 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		E7428C8B1F7B22E6009F1949 /* ViewCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomizer.swift; sourceTree = "<group>"; };
 		E7428C8D1F7B2842009F1949 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				E70EF6931F62BFEB0041F380 /* Secrets */,
 				E7DE08C51F62AB77004BAC91 /* Security */,
+				E7331FE51F7DE2B10055377D /* AccountManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				E7428C8C1F7B22E6009F1949 /* ViewCustomizer.swift in Sources */,
 				E7DE08C71F62ACB0004BAC91 /* LoginViewController.swift in Sources */,
 				E7DE08981F62A96A004BAC91 /* AppDelegate.swift in Sources */,
+				E7331FE61F7DE2B10055377D /* AccountManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

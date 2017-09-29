@@ -20,7 +20,13 @@ class LandingViewController: UIViewController {
         UserSettings.current.rememberMe = false
         
         if UserSettings.current.rememberMe ?? false {
-            // Skip log-in page
+            AccountManager.shared.performLogin(username: "bob", password: "nope", callback: { (success: Bool) in
+                if success {
+                    print("Succeeded!")
+                } else {
+                    print("Failed :(") 
+                }})
+            
         } else {
             
             guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") else {
