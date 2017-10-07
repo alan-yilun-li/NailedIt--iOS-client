@@ -152,13 +152,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wl-gN-Ory">
+                                <rect key="frame" x="28" y="347" width="319" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="New User">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newUserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0tn-eh-lAe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.396078431372549" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.35615681719999998" green="0.27140468690000003" blue="1" alpha="0.69871040239726023" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vtH-TF-x3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="07U-IS-z0Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vtH-TF-x3T" secondAttribute="trailing" constant="10" id="3wN-9F-EME"/>
+                            <constraint firstItem="4Wl-gN-Ory" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="4Wg-jo-VDl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Wl-gN-Ory" secondAttribute="trailing" constant="12" id="CaM-GL-bwz"/>
                             <constraint firstItem="OP7-63-SMB" firstAttribute="top" secondItem="vtH-TF-x3T" secondAttribute="bottom" constant="10" id="I4s-0Q-40G"/>
+                            <constraint firstItem="4Wl-gN-Ory" firstAttribute="top" secondItem="OP7-63-SMB" secondAttribute="bottom" constant="8" id="KJt-mB-hRP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OP7-63-SMB" secondAttribute="trailing" constant="30" id="Lzj-DB-rmx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWU-Vj-Zj1" secondAttribute="bottom" constant="4" id="OG2-It-0Sa"/>
                             <constraint firstItem="AWU-Vj-Zj1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-4" id="WTg-go-Frv"/>

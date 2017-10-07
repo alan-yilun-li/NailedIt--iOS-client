@@ -41,4 +41,9 @@ class AccountManager {
             callback(true)
         }
     }
+    
+    func makeAccount(username: String, password: String, callback: @escaping (Bool) -> Void) {
+        
+        
+    }
 }
