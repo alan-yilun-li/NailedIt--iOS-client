@@ -12,7 +12,7 @@ class ChallengeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Challenges"
+        navigationItem.title = "Nailed It!"
         ViewCustomizer.setup(navigationBar: navigationController?.navigationBar
 )
 

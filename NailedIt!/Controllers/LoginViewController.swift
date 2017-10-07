@@ -108,6 +108,11 @@ class LoginViewController: UIViewController {
         passwordTextField.endEditing(true)
     }
     
+    /// Clears the username and password, to be called when leaving the screen or when otherwise needed.
+    func clearTextFields() {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+    }
     
     // MARK: - IBActions
     
@@ -124,6 +129,7 @@ class LoginViewController: UIViewController {
         guard let challengeEntryController = storyboard?.instantiateViewController(withIdentifier: StoryboardIDKeys.CHALLENGE_TABLE_VIEW_ID) else {
             fatalError()
         }
+        clearTextFields()
         present(challengeEntryController, animated: true, completion: nil) // use completion block to load?
     }
     
@@ -141,11 +147,11 @@ class LoginViewController: UIViewController {
             
             // Adding username/password textfields
             newUserEntry.addTextField(configurationHandler: { [unowned self] (textField) in
-                textField.placeholder = "Username: > 4 characters."
+                textField.placeholder = "Username: Must be > 4 characters"
                 textField.addTarget(self, action: #selector(self.makeAccountInfoUpdated), for: .editingChanged)
             })
             newUserEntry.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = "Password: > 5 characters."
+                textField.placeholder = "Password: Must be > 5 characters"
                 textField.isSecureTextEntry = true
                 textField.addTarget(self, action: #selector(self.makeAccountInfoUpdated), for: .editingChanged)
             })
@@ -155,14 +161,18 @@ class LoginViewController: UIViewController {
             let makeAccountAction = UIAlertAction(title: "Make Account", style: .default, handler: { [unowned self](alertAction) -> Void in
                 
                 // Making an account
-                AccountManager.shared.makeAccount(username: self.newUserEntry.textFields![0].text ?? "", password: self.newUserEntry.textFields![1].text ?? "", callback: { (success) in
+                AccountManager.shared.makeAccount(username: self.newUserEntry.textFields![0].text ?? "", password: self.newUserEntry.textFields![1].text ?? "", callback: { [unowned self] (success) in
+                    
+                    // Clearing textfields for next new user.
+                    for textField in self.newUserEntry.textFields! {
+                        textField.text = ""
+                    }
                     
                     // Handling the response from the server.
                     if success {
                         let successAlert = UIAlertController(title: "Account Made!" , message: "Congratulations, you are now registered for NailedIt!", preferredStyle: .alert)
                         successAlert.addAction(UIAlertAction(title: "Cool!", style: .default, handler: nil))
                         // Maybe add auto-login code here?
-                        
                         self.present(successAlert, animated: true)
                     } else {
                         let errorAlert = UIAlertController(title: "Uh Oh..", message: "Sorry, something went wrong on our side. Please try again in a bit.", preferredStyle: .alert)

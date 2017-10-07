@@ -10,6 +10,7 @@
 		7D180B4065108659E655D59B /* Pods_NailedIt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483F364F09F24DDDE6CCE25D /* Pods_NailedIt_Tests.framework */; };
 		E70EF6921F62BFA10041F380 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E70EF6911F62BFA10041F380 /* .gitignore */; };
 		E70EF6951F62C0070041F380 /* TestSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EF6941F62C0070041F380 /* TestSecret.swift */; };
+		E72435751F8968DD00DF99D7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72435741F8968DD00DF99D7 /* SettingsViewController.swift */; };
 		E7331FE61F7DE2B10055377D /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7331FE51F7DE2B10055377D /* AccountManager.swift */; };
 		E738B9061F89298B00F4E666 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738B9051F89298B00F4E666 /* ChallengeTableViewController.swift */; };
 		E738B9081F892A3300F4E666 /* StoryboardIDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738B9071F892A3300F4E666 /* StoryboardIDKeys.swift */; };
@@ -45,6 +46,7 @@
 		D67C06108968CFF188A2C1D1 /* Pods-NailedIt!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NailedIt!Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NailedIt!Tests/Pods-NailedIt!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E70EF6911F62BFA10041F380 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		E70EF6941F62C0070041F380 /* TestSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSecret.swift; sourceTree = "<group>"; };
+		E72435741F8968DD00DF99D7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E7331FE51F7DE2B10055377D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		E738B9051F89298B00F4E666 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
 		E738B9071F892A3300F4E666 /* StoryboardIDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIDKeys.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				E7DE08C61F62ACB0004BAC91 /* LoginViewController.swift */,
 				E7428C8D1F7B2842009F1949 /* LandingViewController.swift */,
 				E738B9051F89298B00F4E666 /* ChallengeTableViewController.swift */,
+				E72435741F8968DD00DF99D7 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			files = (
 				E70EF6951F62C0070041F380 /* TestSecret.swift in Sources */,
 				E7428C8E1F7B2842009F1949 /* LandingViewController.swift in Sources */,
+				E72435751F8968DD00DF99D7 /* SettingsViewController.swift in Sources */,
 				E7428C8A1F7B22D8009F1949 /* Colours.swift in Sources */,
 				E75570151F71EE0B003B98EB /* UserSettings.swift in Sources */,
 				E738B9061F89298B00F4E666 /* ChallengeTableViewController.swift in Sources */,
