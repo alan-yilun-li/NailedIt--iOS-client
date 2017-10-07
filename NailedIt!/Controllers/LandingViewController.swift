@@ -20,16 +20,22 @@ class LandingViewController: UIViewController {
         UserSettings.current.rememberMe = false
         
         if UserSettings.current.rememberMe ?? false {
+            /*
             AccountManager.shared.performLogin(username: "bob", password: "nope", callback: { (success: Bool) in
                 if success {
                     print("Succeeded!")
                 } else {
                     print("Failed :(") 
                 }})
+            */
             
+            guard let challengeEntryController = storyboard?.instantiateViewController(withIdentifier: StoryboardIDKeys.CHALLENGE_TABLE_VIEW_ID) else {
+                fatalError()
+            }
+            present(challengeEntryController, animated: true, completion: nil) // use completion block to load?
         } else {
             
-            guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") else {
+            guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: StoryboardIDKeys.LOGIN_VIEW_CONTROLLER_ID) else {
                 fatalError()
             }
             present(loginViewController, animated: true, completion: nil)

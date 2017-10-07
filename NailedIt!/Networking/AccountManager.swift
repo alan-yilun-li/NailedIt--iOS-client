@@ -21,7 +21,7 @@ class AccountManager {
     
     // Perform Login
     func performLogin(username: String, password: String, callback: @escaping (Bool) -> Void) {
-        var urlEncodedParameters = "?" + "username=\(username)&" + "password=\(password)"
+        let urlEncodedParameters = "?" + "username=\(username)&" + "password=\(password)"
         Alamofire.request(BASE_URL + GET_TOKEN_ENDPOINT + urlEncodedParameters, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { (response) in
                 print(response)

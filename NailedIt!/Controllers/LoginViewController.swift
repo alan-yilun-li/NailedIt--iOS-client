@@ -99,13 +99,19 @@ class LoginViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        /*
         AccountManager.shared.performLogin(username: username, password: password, callback: { (success: Bool) in
             if success {
                 print("Succeeded!")
             } else {
                 print("Failed :(")
             }})
+        */
+        
+        guard let challengeEntryController = storyboard?.instantiateViewController(withIdentifier: StoryboardIDKeys.CHALLENGE_TABLE_VIEW_ID) else {
+            fatalError()
+        }
+        present(challengeEntryController, animated: true, completion: nil) // use completion block to load?
     }
     
     @IBAction func remembeMeSwitchChanged(_ sender: Any) {

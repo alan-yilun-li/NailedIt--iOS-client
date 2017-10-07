@@ -180,5 +180,52 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
+        <!--Challenge Table View Controller-->
+        <scene sceneID="JfT-Ye-SsY">
+            <objects>
+                <tableViewController id="s1t-0T-sDH" customClass="ChallengeTableViewController" customModule="NailedIt_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4nJ-Kz-fnb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChallengeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeCell" rowHeight="140" id="ohn-gN-sKp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ohn-gN-sKp" id="Zpr-GA-li7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s1t-0T-sDH" id="5jZ-D1-gbp"/>
+                            <outlet property="delegate" destination="s1t-0T-sDH" id="Vz8-Bo-d0A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dIB-F4-bjO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRk-De-Vog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785.5" y="36.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MHA-8f-kKm">
+            <objects>
+                <navigationController storyboardIdentifier="ChallengeTableEntryNav" automaticallyAdjustsScrollViewInsets="NO" id="1gz-KU-gpx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ikr-my-tiL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s1t-0T-sDH" kind="relationship" relationship="rootViewController" id="UMI-oU-MRQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdy-8M-zcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="37"/>
+        </scene>
     </scenes>
 </document>
