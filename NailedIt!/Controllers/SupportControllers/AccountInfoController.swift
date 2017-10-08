@@ -17,56 +17,74 @@ class AccountInfoController {
     
     static let shared = AccountInfoController()
     private init() {}
-    var newUserAlert: UIAlertController!
-    var checkPasswordAlert: UIAlertController!
+    private var newUserAlert: UIAlertController!
+    private var checkPasswordAlert: UIAlertController!
     
-    // Computed properties based on the newUserAlert
-    var username: String {
-        return newUserAlert?.textFields?[0].text ?? ""
-    }
+}
+
+// MARK: - Check Password Alert Related Code
+extension AccountInfoController {
     
-    var password: String {
-        return newUserAlert?.textFields?[1].text ?? ""
-    }
-    
-    var makeAccountButton: UIAlertAction {
-        return newUserAlert.actions[1]
+    private var passwordToCheck: String {
+        return checkPasswordAlert.textFields?[0].text ?? ""
     }
     
     func makeCheckPasswordAlert(forViewController viewController: UIViewController, successAction: @escaping () -> Void) {
         if checkPasswordAlert == nil {
             
-            checkPasswordAlert = UIAlertController(title: "Enter Password", message: nil, preferredStyle: .alert)
+            checkPasswordAlert = UIAlertController(title: "Enter Password", message: "This is to keep your account safe.", preferredStyle: .alert)
             
             checkPasswordAlert.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = "This is to keep your account safe. :)"
+                textField.placeholder = "Password"
                 textField.isSecureTextEntry = true
-                })
+            })
             
-            checkPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            let checkPWAction = UIAlertAction(title: "Continue", style: .default, handler: { _ in
-                // .... Check password code here; hit server, get boolean
+            checkPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
                 
-                let success = true // Debugging output before server networking portion created
-                if success {
-                    successAction() // Whatever block you pass-in to trigger on success.
+            }))
+            let checkPWAction = UIAlertAction(title: "Continue", style: .default, handler: { [unowned self] (action) in
+                
+                // Hitting the server to check password
+                AccountManager.shared.checkPassword(username: UserSettings.current.username ?? "", passwordToCheck: self.passwordToCheck, callback: { (success) in
                     
-                } else {
-                    let failureAlert = UIAlertController(title: "Wrong Password", message: "Please try again! If you are still having troubles, file a support ticket.", preferredStyle: .alert)
-                    failureAlert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))
-                    viewController.present(failureAlert, animated: true)
-                }
+                    if success {
+                        successAction() // Whatever block you pass-in to trigger on success.
+                        
+                    } else {
+                        
+                        let failureAlert = UIAlertController(title: "Wrong Password", message: "Please try again! If you are still having troubles, file a support ticket.", preferredStyle: .alert)
+                        failureAlert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))
+                        viewController.present(failureAlert, animated: true)
+                    }
                 })
+            })
+            
             checkPasswordAlert.addAction(checkPWAction)
             checkPasswordAlert.preferredAction = checkPWAction
             
         }
-        
         viewController.present(checkPasswordAlert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - New Account Related Code
+extension AccountInfoController {
+    
+    // Computed properties based on the newUserAlert
+    fileprivate var username: String {
+        return newUserAlert?.textFields?[0].text ?? ""
+    }
+    
+    fileprivate var password: String {
+        return newUserAlert?.textFields?[1].text ?? ""
+    }
+    
+    fileprivate var makeAccountButton: UIAlertAction {
+        return newUserAlert.actions[1]
     }
     
     func makeNewUserAlert(forViewController viewController: UIViewController) {
-    
+        
         // Presenting new user entry.
         if newUserAlert == nil {
             
@@ -120,12 +138,11 @@ class AccountInfoController {
     
     /// Function to change status of make account button based on textfield edits.
     /// - Note: Receives updates from target-action mechanism.
-    @objc func makeAccountInfoUpdated() {
+    @objc private func makeAccountInfoUpdated() {
         if username.characters.count >= USERNAME_MIN_LENGTH && password.characters.count >= PASSWORD_MIN_LENGTH {
             makeAccountButton.isEnabled = true
         } else {
             makeAccountButton.isEnabled = false
         }
     }
-    
 }

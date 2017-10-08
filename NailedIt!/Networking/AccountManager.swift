@@ -46,4 +46,10 @@ class AccountManager {
         
         
     }
+    
+    
+    func checkPassword(username: String, passwordToCheck: String, callback: @escaping (Bool) -> Void) {
+        
+
+    }
 }

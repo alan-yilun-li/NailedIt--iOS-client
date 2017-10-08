@@ -29,9 +29,7 @@ class SettingsViewController: UITableViewController {
                 
                 })
         }
-        
         // No other selectable rows yet.
-        
     }
 
     override func didReceiveMemoryWarning() {
