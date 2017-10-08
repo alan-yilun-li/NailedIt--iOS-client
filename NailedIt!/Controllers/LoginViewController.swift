@@ -8,8 +8,8 @@
 
 import UIKit
 
-private let PASSWORD_MIN_LENGTH = 5
-private let USERNAME_MIN_LENGTH = 4
+private let PASSWORD_MIN_LENGTH = UserSettings.PASSWORD_MIN_LENGTH
+private let USERNAME_MIN_LENGTH = UserSettings.USERNAME_MIN_LENGTH
 
 class LoginViewController: UIViewController {
 
@@ -87,17 +87,6 @@ class LoginViewController: UIViewController {
             loginButton.layer.opacity = GREYED_OUT_OPACITY
         }
     }
-    
-    /// Function to change status of make account button based on textfield edits.
-    /// - Note: Receives updates from target-action mechanism.
-    @objc func makeAccountInfoUpdated() {
-        if username.characters.count >= USERNAME_MIN_LENGTH && password.characters.count >= PASSWORD_MIN_LENGTH {
-            loginButton.isEnabled = true
-        } else {
-            loginButton.isEnabled = false
-        }
-    }
-
 
     /// Ends any editing actions currently taking place.
     /// - Important: Dismisses keyboard as a side effect.
@@ -138,57 +127,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func newUserButtonTapped(_ sender: Any) {
-        
-        // Presenting new user entry.
-        if newUserEntry == nil {
-            
-            // Setting up the make account alert
-            newUserEntry = UIAlertController(title: "New User", message: "Please input your new username and password.", preferredStyle: .alert)
-            
-            // Adding username/password textfields
-            newUserEntry.addTextField(configurationHandler: { [unowned self] (textField) in
-                textField.placeholder = "Username: Must be > 4 characters"
-                textField.addTarget(self, action: #selector(self.makeAccountInfoUpdated), for: .editingChanged)
-            })
-            newUserEntry.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = "Password: Must be > 5 characters"
-                textField.isSecureTextEntry = true
-                textField.addTarget(self, action: #selector(self.makeAccountInfoUpdated), for: .editingChanged)
-            })
-            
-            // Adding UIAlertActions
-            newUserEntry.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            let makeAccountAction = UIAlertAction(title: "Make Account", style: .default, handler: { [unowned self](alertAction) -> Void in
-                
-                // Making an account
-                AccountManager.shared.makeAccount(username: self.newUserEntry.textFields![0].text ?? "", password: self.newUserEntry.textFields![1].text ?? "", callback: { [unowned self] (success) in
-                    
-                    // Clearing textfields for next new user.
-                    for textField in self.newUserEntry.textFields! {
-                        textField.text = ""
-                    }
-                    
-                    // Handling the response from the server.
-                    if success {
-                        let successAlert = UIAlertController(title: "Account Made!" , message: "Congratulations, you are now registered for NailedIt!", preferredStyle: .alert)
-                        successAlert.addAction(UIAlertAction(title: "Cool!", style: .default, handler: nil))
-                        // Maybe add auto-login code here?
-                        self.present(successAlert, animated: true)
-                    } else {
-                        let errorAlert = UIAlertController(title: "Uh Oh..", message: "Sorry, something went wrong on our side. Please try again in a bit.", preferredStyle: .alert)
-                        errorAlert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-                        
-                        self.present(errorAlert, animated: true)
-                    }
-                })
-            })
-            
-            newUserEntry.addAction(makeAccountAction)
-            newUserEntry.preferredAction = makeAccountAction
-        }
-        
-        present(newUserEntry, animated: true)
-        
+        AccountInfoController.shared.makeNewUserAlert(forViewController: self)
     }
 }
 

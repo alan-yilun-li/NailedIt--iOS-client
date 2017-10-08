@@ -17,6 +17,10 @@ private let REMEMBER_ME_KEY = "REMEMBE_ME"
 /// Structure associated with user's default settings.
 class UserSettings {
     
+    // Storing some default values for use in user management
+    static let PASSWORD_MIN_LENGTH = 5
+    static let USERNAME_MIN_LENGTH = 4
+    
     // Singleton Initialization
     
     static let current = UserSettings()
