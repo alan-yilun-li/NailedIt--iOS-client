@@ -19,6 +19,7 @@
 		E7428C8E1F7B2842009F1949 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7428C8D1F7B2842009F1949 /* LandingViewController.swift */; };
 		E75570151F71EE0B003B98EB /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75570141F71EE0B003B98EB /* UserSettings.swift */; };
 		E77AEF101F8A876500C03D54 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AEF0F1F8A876500C03D54 /* AccountInfoController.swift */; };
+		E77AEF121F8A9A2300C03D54 /* EditAccountInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AEF111F8A9A2300C03D54 /* EditAccountInfoTableViewController.swift */; };
 		E7DE08981F62A96A004BAC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE08971F62A96A004BAC91 /* AppDelegate.swift */; };
 		E7DE089F1F62A96A004BAC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DE089E1F62A96A004BAC91 /* Assets.xcassets */; };
 		E7DE08AD1F62A96A004BAC91 /* NailedIt_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE08AC1F62A96A004BAC91 /* NailedIt_Tests.swift */; };
@@ -56,6 +57,7 @@
 		E7428C8D1F7B2842009F1949 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		E75570141F71EE0B003B98EB /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		E77AEF0F1F8A876500C03D54 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		E77AEF111F8A9A2300C03D54 /* EditAccountInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountInfoTableViewController.swift; sourceTree = "<group>"; };
 		E7DE08941F62A96A004BAC91 /* NailedIt!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NailedIt!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE08971F62A96A004BAC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7DE089E1F62A96A004BAC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				E7428C8D1F7B2842009F1949 /* LandingViewController.swift */,
 				E738B9051F89298B00F4E666 /* ChallengeTableViewController.swift */,
 				E72435741F8968DD00DF99D7 /* SettingsViewController.swift */,
+				E77AEF111F8A9A2300C03D54 /* EditAccountInfoTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				E7DE08981F62A96A004BAC91 /* AppDelegate.swift in Sources */,
 				E7331FE61F7DE2B10055377D /* AccountManager.swift in Sources */,
 				E738B9081F892A3300F4E666 /* StoryboardIDKeys.swift in Sources */,
+				E77AEF121F8A9A2300C03D54 /* EditAccountInfoTableViewController.swift in Sources */,
 				E77AEF101F8A876500C03D54 /* AccountInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var winCountLabel: UILabel!
+    @IBOutlet weak var pointsCountLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,11 +27,9 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Editing account information
         if indexPath.section == 0 {
-            AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { () -> Void in
-                
-                
-                
-                })
+            AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { [unowned self] () -> Void in
+                self.performSegue(withIdentifier: StoryboardIDKeys.EDIT_ACCOUNT_INFO_SEG_ID, sender: nil)
+            })
         }
         // No other selectable rows yet.
     }

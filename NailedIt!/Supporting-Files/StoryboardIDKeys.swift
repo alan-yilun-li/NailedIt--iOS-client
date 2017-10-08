@@ -18,4 +18,7 @@ struct StoryboardIDKeys {
     
     // Reuse ID for cells
     static let CHALLENEGE_CELL_REUSE_ID = "ChallengeCell"
+    
+    // Segue IDs
+    static let EDIT_ACCOUNT_INFO_SEG_ID = "editAccountInfoSegue"
 }
