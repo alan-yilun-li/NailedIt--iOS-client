@@ -271,8 +271,8 @@
                                                     <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alan.yilun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n2-h0-6Pk">
-                                                    <rect key="frame" x="288" y="11" width="69" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n2-h0-6Pk">
+                                                    <rect key="frame" x="317" y="11" width="40" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -420,7 +420,7 @@
             </objects>
             <point key="canvasLocation" x="2562" y="37"/>
         </scene>
-        <!--Edit Account Info-->
+        <!--Edit Info-->
         <scene sceneID="R1s-ue-kd8">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRN-Ty-UVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,7 +487,7 @@
                             <outlet property="delegate" destination="4k9-gv-1Y1" id="2ZO-ci-dI5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Account Info" id="Qvw-PC-AlF">
+                    <navigationItem key="navigationItem" title="Edit Info" id="Qvw-PC-AlF">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="u5P-gt-HMM">
                             <connections>
                                 <action selector="backButtonTapped:" destination="4k9-gv-1Y1" id="hSG-Rd-BTw"/>

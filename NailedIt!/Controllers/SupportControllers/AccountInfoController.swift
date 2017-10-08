@@ -29,40 +29,47 @@ extension AccountInfoController {
         return checkPasswordAlert.textFields?[0].text ?? ""
     }
     
+    private func clearPasswordField() {
+        // Clearing password
+        self.checkPasswordAlert.textFields?[0].text = ""
+    }
+    
     func makeCheckPasswordAlert(forViewController viewController: UIViewController, successAction: @escaping () -> Void) {
-        if checkPasswordAlert == nil {
+ 
+        // Making a new UIAlertController every time to account for the different success actions that may be desired.
+        
+        checkPasswordAlert = UIAlertController(title: "Enter Password", message: "This is to keep your account safe.", preferredStyle: .alert)
+        
+        checkPasswordAlert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+        })
+        
+        checkPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [unowned self] _ in
+            self.clearPasswordField()
+        }))
+        
+        let checkPWAction = UIAlertAction(title: "Continue", style: .default, handler: { [unowned self] (action) in
             
-            checkPasswordAlert = UIAlertController(title: "Enter Password", message: "This is to keep your account safe.", preferredStyle: .alert)
+            self.clearPasswordField()
             
-            checkPasswordAlert.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = "Password"
-                textField.isSecureTextEntry = true
-            })
-            
-            checkPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            // Hitting the server to check password
+            AccountManager.shared.checkPassword(username: UserSettings.current.username ?? "", passwordToCheck: self.passwordToCheck, callback: { (success) in
                 
-            }))
-            let checkPWAction = UIAlertAction(title: "Continue", style: .default, handler: { [unowned self] (action) in
-                
-                // Hitting the server to check password
-                AccountManager.shared.checkPassword(username: UserSettings.current.username ?? "", passwordToCheck: self.passwordToCheck, callback: { (success) in
+                if success {
+                    successAction() // Whatever block you pass-in to trigger on success.
+                } else {
                     
-                    if success {
-                        successAction() // Whatever block you pass-in to trigger on success.
-                        
-                    } else {
-                        
-                        let failureAlert = UIAlertController(title: "Wrong Password", message: "Please try again! If you are still having troubles, file a support ticket.", preferredStyle: .alert)
-                        failureAlert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))
-                        viewController.present(failureAlert, animated: true)
-                    }
-                })
+                    let failureAlert = UIAlertController(title: "Wrong Password", message: "Please try again! If you are still having troubles, file a support ticket.", preferredStyle: .alert)
+                    failureAlert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))
+                    viewController.present(failureAlert, animated: true)
+                }
             })
-            
-            checkPasswordAlert.addAction(checkPWAction)
-            checkPasswordAlert.preferredAction = checkPWAction
-            
-        }
+        })
+        
+        checkPasswordAlert.addAction(checkPWAction)
+        checkPasswordAlert.preferredAction = checkPWAction
+        
         viewController.present(checkPasswordAlert, animated: true, completion: nil)
     }
 }
@@ -81,6 +88,13 @@ extension AccountInfoController {
     
     fileprivate var makeAccountButton: UIAlertAction {
         return newUserAlert.actions[1]
+    }
+    
+    private func clearInputFields() {
+        // Clearing textfields for next new user.
+        for textField in self.newUserAlert.textFields! {
+            textField.text = ""
+        }
     }
     
     func makeNewUserAlert(forViewController viewController: UIViewController) {
@@ -103,16 +117,15 @@ extension AccountInfoController {
             })
             
             // Adding UIAlertActions
-            newUserAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            newUserAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [unowned self] (alertAction) -> Void in
+                self.clearInputFields()
+            }))
             let makeAccountAction = UIAlertAction(title: "Make Account", style: .default, handler: { [unowned self](alertAction) -> Void in
                 
                 // Making an account
                 AccountManager.shared.makeAccount(username: self.newUserAlert.textFields![0].text ?? "", password: self.newUserAlert.textFields![1].text ?? "", callback: { [unowned self] (success) in
                     
-                    // Clearing textfields for next new user.
-                    for textField in self.newUserAlert.textFields! {
-                        textField.text = ""
-                    }
+                    self.clearInputFields()
                     
                     // Handling the response from the server.
                     if success {
