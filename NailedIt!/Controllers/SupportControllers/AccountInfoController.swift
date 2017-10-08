@@ -33,10 +33,32 @@ class AccountInfoController {
         return newUserAlert.actions[1]
     }
     
-    func makeCheckPasswordAlert(forViewController viewController: UIViewController) {
+    func makeCheckPasswordAlert(forViewController viewController: UIViewController, successAction: @escaping () -> Void) {
         if checkPasswordAlert == nil {
             
+            checkPasswordAlert = UIAlertController(title: "Enter Password", message: nil, preferredStyle: .alert)
             
+            checkPasswordAlert.addTextField(configurationHandler: { (textField) in
+                textField.placeholder = "This is to keep your account safe. :)"
+                textField.isSecureTextEntry = true
+                })
+            
+            checkPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            let checkPWAction = UIAlertAction(title: "Continue", style: .default, handler: { _ in
+                // .... Check password code here; hit server, get boolean
+                
+                let success = true // Debugging output before server networking portion created
+                if success {
+                    successAction() // Whatever block you pass-in to trigger on success.
+                    
+                } else {
+                    let failureAlert = UIAlertController(title: "Wrong Password", message: "Please try again! If you are still having troubles, file a support ticket.", preferredStyle: .alert)
+                    failureAlert.addAction(UIAlertAction(title: "Return", style: .default, handler: nil))
+                    viewController.present(failureAlert, animated: true)
+                }
+                })
+            checkPasswordAlert.addAction(checkPWAction)
+            checkPasswordAlert.preferredAction = checkPWAction
             
         }
         

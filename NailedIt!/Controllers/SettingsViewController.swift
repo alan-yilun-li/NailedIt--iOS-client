@@ -23,8 +23,11 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Editing account information
         if indexPath.section == 0 {
-            
-            
+            AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { () -> Void in
+                
+                
+                
+                })
         }
         
         // No other selectable rows yet.
