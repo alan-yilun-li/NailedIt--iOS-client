@@ -10,6 +10,7 @@ import UIKit
 
 class ChallengeTableViewController: UITableViewController {
 
+    // MARK: - ViewController LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Nailed It!"

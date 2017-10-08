@@ -439,17 +439,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NJ-Lm-Nj0" userLabel="Username Label">
-                                                    <rect key="frame" x="20" y="11" width="337" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dx-RU-Qoh">
+                                                    <rect key="frame" x="12" y="7" width="353" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9NJ-Lm-Nj0" firstAttribute="leading" secondItem="hcd-FA-KLh" secondAttribute="leadingMargin" constant="12" id="IQ9-aN-x9H"/>
-                                                <constraint firstItem="9NJ-Lm-Nj0" firstAttribute="centerY" secondItem="hcd-FA-KLh" secondAttribute="centerY" id="SKW-P2-pFf"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9NJ-Lm-Nj0" secondAttribute="trailing" constant="10" id="sG5-RJ-Wj2"/>
+                                                <constraint firstItem="8dx-RU-Qoh" firstAttribute="leading" secondItem="hcd-FA-KLh" secondAttribute="leading" constant="12" id="dml-Oi-rf3"/>
+                                                <constraint firstAttribute="trailing" secondItem="8dx-RU-Qoh" secondAttribute="trailing" constant="10" id="tdb-cD-ZGa"/>
+                                                <constraint firstItem="8dx-RU-Qoh" firstAttribute="centerY" secondItem="hcd-FA-KLh" secondAttribute="centerY" id="tgH-a3-hv4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -458,24 +458,24 @@
                             <tableViewSection headerTitle="Password" id="Mcl-NT-K78">
                                 <string key="footerTitle">Your password must be more than 5 characters long. You don't have to, but we recommend you choose something with numbers and capitals too.</string>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s85-sB-0Vb" userLabel="Edit Info Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" focusStyle="custom" id="usj-5d-aWG" userLabel="Edit Info Cell">
                                         <rect key="frame" x="0.0" y="191" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s85-sB-0Vb" id="9LR-bp-94l">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="usj-5d-aWG" id="eMe-p9-7zN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt2-Zp-xWy" userLabel="Username Label">
-                                                    <rect key="frame" x="20" y="11" width="337" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.3294117647" green="0.34901960780000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-MW-nWb">
+                                                    <rect key="frame" x="12" y="7" width="353" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Qt2-Zp-xWy" secondAttribute="trailing" constant="10" id="1b5-8Q-bLh"/>
-                                                <constraint firstItem="Qt2-Zp-xWy" firstAttribute="centerY" secondItem="9LR-bp-94l" secondAttribute="centerY" id="NJy-eJ-wgh"/>
-                                                <constraint firstItem="Qt2-Zp-xWy" firstAttribute="leading" secondItem="9LR-bp-94l" secondAttribute="leadingMargin" constant="12" id="mne-Aa-MWp"/>
+                                                <constraint firstItem="lTa-MW-nWb" firstAttribute="leading" secondItem="eMe-p9-7zN" secondAttribute="leading" constant="12" id="CsM-Rq-YHB"/>
+                                                <constraint firstAttribute="trailing" secondItem="lTa-MW-nWb" secondAttribute="trailing" constant="10" id="hGy-TE-CLm"/>
+                                                <constraint firstItem="lTa-MW-nWb" firstAttribute="centerY" secondItem="eMe-p9-7zN" secondAttribute="centerY" id="kTC-FI-Uh3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -493,7 +493,16 @@
                                 <action selector="backButtonTapped:" destination="4k9-gv-1Y1" id="hSG-Rd-BTw"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FDN-0N-cW3">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="4k9-gv-1Y1" id="gCf-Ri-2ha"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="lTa-MW-nWb" id="d7h-Ag-oBT"/>
+                        <outlet property="userNameTextField" destination="8dx-RU-Qoh" id="dQQ-xv-jTe"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="3366" y="36"/>

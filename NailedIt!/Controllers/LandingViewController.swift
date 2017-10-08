@@ -11,8 +11,10 @@ import UIKit
 // Segue keys
 private let LOGIN_SEGUE_ID = "SHOW_LOGIN"
 
+/// Initial view controller that is loaded. Directs user automatically to other pages based on saved settings and fetches initial information.
 class LandingViewController: UIViewController {
 
+    // MARK: - ViewController LifeCycle Methods
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         

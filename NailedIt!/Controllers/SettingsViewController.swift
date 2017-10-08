@@ -8,12 +8,16 @@
 
 import UIKit
 
+/// Controller for managing the settings page
 class SettingsViewController: UITableViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var winCountLabel: UILabel!
     @IBOutlet weak var pointsCountLabel: UILabel!
     
+    
+    // MARK: - ViewController LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +25,12 @@ class SettingsViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(displayNameChanged), name: UserSettings.displayNameChangedNotif, object: nil)
     }
     
-    @objc private func displayNameChanged() {
-        displayNameLabel.text = UserSettings.current.displayName
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Editing account information
@@ -36,11 +43,11 @@ class SettingsViewController: UITableViewController {
                 // and for scalability if extra rows are added that don't need password auth.
                 
             case 0:
-            AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { [unowned self] () -> Void in
+                AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { [unowned self] () -> Void in
                     let chooseNameController = UIAlertController(title: "Choose a Display Name", message: "This will be what strangers and friends see you as on challenges.", preferredStyle: .alert)
                     chooseNameController.addTextField(configurationHandler: { (textField) in
                         textField.placeholder = "Display Name Here"
-                        })
+                    })
                     chooseNameController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     let confirmNameAction = UIAlertAction(title: "Confirm", style: .default, handler: { [unowned self] (action) in
                         
@@ -52,7 +59,7 @@ class SettingsViewController: UITableViewController {
                             
                             let tryAgainAction = UIAlertAction(title: "Try Again", style: .default, handler: { [unowned self] (action) in
                                 self.present(nameTooShortAlert, animated: true)
-                                })
+                            })
                             nameTooShortAlert.addAction(tryAgainAction)
                             nameTooShortAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                             
@@ -69,9 +76,9 @@ class SettingsViewController: UITableViewController {
                 })
                 
             case 1:
-            AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { [unowned self] () -> Void in
+                AccountInfoController.shared.makeCheckPasswordAlert(forViewController: self, successAction: { [unowned self] () -> Void in
                     self.performSegue(withIdentifier: StoryboardIDKeys.EDIT_ACCOUNT_INFO_SEG_ID, sender: nil)
-            })
+                })
                 
             default: fatalError() // This should never run, switch cases should be exhaustive.
             }
@@ -79,12 +86,12 @@ class SettingsViewController: UITableViewController {
         
         // No other selectable rows yet.
     }
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc private func displayNameChanged() {
+        displayNameLabel.text = UserSettings.current.displayName
     }
+    
+    // MARK: - IBActions
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -95,5 +102,7 @@ class SettingsViewController: UITableViewController {
         // AccountManager.shared.logout to revoke token.
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
 }
