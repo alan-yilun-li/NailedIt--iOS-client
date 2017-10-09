@@ -423,7 +423,6 @@
         <!--Edit Info-->
         <scene sceneID="R1s-ue-kd8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yRN-Ty-UVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4k9-gv-1Y1" customClass="EditAccountInfoTableViewController" customModule="NailedIt_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="j5c-D0-ebB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -493,7 +492,7 @@
                                 <action selector="backButtonTapped:" destination="4k9-gv-1Y1" id="hSG-Rd-BTw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FDN-0N-cW3">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="FDN-0N-cW3">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="4k9-gv-1Y1" id="gCf-Ri-2ha"/>
                             </connections>
@@ -501,9 +500,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="lTa-MW-nWb" id="d7h-Ag-oBT"/>
+                        <outlet property="saveButton" destination="FDN-0N-cW3" id="iIo-61-JkH"/>
                         <outlet property="userNameTextField" destination="8dx-RU-Qoh" id="dQQ-xv-jTe"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRN-Ty-UVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3366" y="36"/>
         </scene>

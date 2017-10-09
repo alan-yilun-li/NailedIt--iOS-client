@@ -52,4 +52,10 @@ class AccountManager {
         let success = true // Debugging output before actual server-communicating code is made
         callback(success)
     }
+    
+    func updateAccount(username: String?, password: String?, callback: @escaping (Bool) -> Void) {
+        let success = true // Debugging output before actual server-communicating code is made
+        callback(success)
+    }
+    
 }

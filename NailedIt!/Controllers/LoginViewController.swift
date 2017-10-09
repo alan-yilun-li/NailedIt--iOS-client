@@ -110,6 +110,10 @@ class LoginViewController: UIViewController {
         AccountManager.shared.performLogin(username: username, password: password, callback: { (success: Bool) in
             if success {
                 print("Succeeded!")
+         
+                 // Saving in user settings
+                 UserSettings.current.username = username
+                 UserSettings.current.password = password
             } else {
                 print("Failed :(")
             }})
