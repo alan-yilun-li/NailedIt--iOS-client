@@ -99,10 +99,15 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        // AccountManager.shared.logout to revoke token.
-        dismiss(animated: true, completion: nil)
+        // Presenting a warning alert
+        let logoutWarning = UIAlertController(title: "Logout?", message: "You will have to re-enter your credentials to get back in.", preferredStyle: .alert)
+        logoutWarning.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        logoutWarning.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { [unowned self] _ in
+            
+            // AccountManager.shared.logout to revoke token.
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(logoutWarning, animated: true)
     }
-    
-    
-    
 }
