@@ -142,6 +142,7 @@ extension AccountInfoController {
                 })
             })
             
+            makeAccountAction.isEnabled = false
             newUserAlert.addAction(makeAccountAction)
             newUserAlert.preferredAction = makeAccountAction
         }
